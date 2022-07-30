@@ -1,0 +1,7 @@
+// array vs mapping 
+        // https://ethereum.stackexchange.com/questions/2592/store-data-in-mapping-vs-array
+        // https://www.devtwins.com/blog/understanding-mapping-vs-array-in-solidity
+        // https://medium.com/robhitchens/solidity-crud-part-1-824ffa69509a
+        // https://ethereum.stackexchange.com/questions/44734/combination-of-mapping-and-array-in-solidity-data-storage-question
+        //https://ethereum.stackexchange.com/questions/44445/correct-practice-for-modifying-struct-in-mapping/44447
+        // https://ethereum.stackexchange.com/questions/101609/how-to-push-a-struct-into-a-mapping-of-structs
