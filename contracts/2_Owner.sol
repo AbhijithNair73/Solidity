@@ -2,13 +2,13 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
-import "hardhat/console.sol";
+// import "hardhat/console.sol";
 
 /**
  * @title Owner
  * @dev Set & change owner
  */
-contract Owner {
+contract Ownable {
 
     address private owner;
     
@@ -16,7 +16,7 @@ contract Owner {
     event OwnerSet(address indexed oldOwner, address indexed newOwner);
     
     // modifier to check if caller is owner
-    modifier isOwner() {
+    modifier ownerOnly() {
         // If the first argument of 'require' evaluates to 'false', execution terminates and all
         // changes to the state and to Ether balances are reverted.
         // This used to consume all gas in old EVM versions, but not anymore.
@@ -30,7 +30,6 @@ contract Owner {
      * @dev Set contract deployer as owner
      */
     constructor() {
-        console.log("Owner contract deployed by:", msg.sender);
         owner = msg.sender; // 'msg.sender' is sender of current call, contract deployer for a constructor
         emit OwnerSet(address(0), owner);
     }
@@ -39,7 +38,7 @@ contract Owner {
      * @dev Change owner
      * @param newOwner address of new owner
      */
-    function changeOwner(address newOwner) public isOwner {
+    function changeOwner(address newOwner) public ownerOnly {
         emit OwnerSet(owner, newOwner);
         owner = newOwner;
     }
